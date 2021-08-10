@@ -1,0 +1,47 @@
+<br /><br />
+<h1>Cadastro</h1>
+
+<div class="msgReturn">{{msgReturn}}</div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 col-md-offset-5">
+    <div class="jumbotron">
+      <form
+        [formGroup]="cadastroForm"
+        (ngSubmit)="postdata(cadastroForm)"
+        autocomplete="off">
+
+        <div class="form-group">
+          <label for="CEP">CEP</label>
+          <input
+            type="number"
+            name="cep"
+            formControlName="cep"
+            autocomplete="off"
+            class="form-control input-sm"
+            placeholder="Cep"
+          />
+        </div>
+        <div class="form-group">
+          <label for="Cidade">Cidade</label>
+          <input
+            type="text"
+            name="city"
+            formControlName="city"
+            autocomplete="off"
+            class="form-control input-sm"
+            placeholder="Nome da Cidade"
+          />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Salvar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
