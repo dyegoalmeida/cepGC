@@ -3,8 +3,6 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { LoginComponent } from '../login/login.component';
-
 
 @Component({
   selector: 'app-cadastro',
@@ -13,7 +11,7 @@ import { LoginComponent } from '../login/login.component';
 })
 export class CadastroComponent implements OnInit {
 
-  cadastroForm: FormGroup;
+  cadastroForm: FormGroup
 
   msgReturn = "";
   login = "";
@@ -21,10 +19,8 @@ export class CadastroComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dataService: ApiService,
-    private router: Router,
-    private user: LoginComponent
+    private router: Router
   ) {
-
     this.cadastroForm = this.fb.group({
       cep: ['',[Validators.required, Validators.maxLength(6), Validators.min(100000), Validators.max(999999)]],
       city: ['', [Validators.required, Validators.maxLength(100)]],
@@ -34,22 +30,32 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
 
 
+
   }
 
   postdata(cadastroForm1: any) {
+
+    this.msgReturn = "";
+
+    if (this.cadastroForm.invalid){
+      this.msgReturn = "Os campos são obrigatórios, para o cep digite um valor entre 100.000 e 999.999, somente números!";
+      return;
+    }
+
     this.dataService
       .cepPost(cadastroForm1.value.cep, cadastroForm1.value.city)
       .pipe(first())
       .subscribe(
         (data) => {
+          console.log(data);
           const redirect = this.dataService.redirectUrl
             ? this.dataService.redirectUrl
             : '/dashboard/cadastro';
-            this.msgReturn = "CEP cadastrado com sucesso! ";
+          this.msgReturn = data.msg;
           this.router.navigate([redirect]);
         },
         (error) => {
-          this.msgReturn = 'Ocorreu um erro: ' + '\n' + error.message + '\n' + error.statusText + '\n' + error.url;
+          this.msgReturn = 'Erro: ' + 'Object Keys: ' + Object.keys(error) + 'Object Values: ' + Object.values(error);
         }
       );
   }

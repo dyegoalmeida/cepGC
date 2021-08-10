@@ -1,7 +1,5 @@
 <?php
 
-  header("Access-Control-Allow-Origin: *");
-
   include_once("database.php");
 
   $postdata = file_get_contents("php://input");
@@ -20,10 +18,10 @@
     {
 
       $authdata = [
-      'name' => $name,
-      'pwd' => '',
-      'email' => $email,
-      'Id' => mysqli_insert_id($mysqli)
+        'name' => $name,
+        'pwd' => '',
+        'email' => $email,
+        'Id' => mysqli_insert_id($mysqli)
       ];
 
       echo json_encode($authdata);
