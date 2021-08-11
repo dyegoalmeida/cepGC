@@ -1,6 +1,7 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Cep } from './../app/lista/cep';
 
 @Injectable({
   providedIn: 'root',
@@ -20,10 +21,10 @@ export class ApiService {
     return this.httpClient
       .post<any>(this.baseUrl + '/login.php', { username, password })
       .pipe(
-        map((Users) => {
-          this.setToken(Users[0].name);
+        map((User) => {
+          this.setToken(User[0].name);
           this.getLoggedInName.emit(true);
-          return Users;
+          return User;
         })
       );
   }
@@ -38,12 +39,22 @@ export class ApiService {
       );
   }
 
+  public cepList() {
+    return this.httpClient
+      .get<Cep[]>(this.baseUrl + '/lista.php',{})
+      .pipe(
+        map((list) => {
+          return list;
+        })
+      );
+  }
+
   public userregistration(name: any, email: any, pwd: any) {
     return this.httpClient
       .post<any>(this.baseUrl + '/register.php', { name, email, pwd })
       .pipe(
-        map((Users) => {
-          return Users;
+        map((User) => {
+          return User;
         })
       );
   }

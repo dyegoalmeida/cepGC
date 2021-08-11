@@ -12,7 +12,6 @@ import { ApiService } from '../api.service';
 export class CadastroComponent implements OnInit {
 
   cadastroForm: FormGroup
-
   msgReturn = "";
 
   constructor(

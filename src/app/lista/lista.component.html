@@ -1,1 +1,37 @@
-<h1>Lista</h1>
+<br>
+<br>
+
+<div class="msgReturn justify-content-center">{{msgError}}</div>
+
+<br>
+
+<div class="container container-fluid">
+
+  <div class="header">
+    <h1>Lista</h1>
+  </div>
+
+  <div class="btnBack">
+    <button type="button" class="btn btn-primary" (click)="backDashboard()">Voltar</button>
+  </div>
+
+  <div class="main">
+    <table class="table table-hover" ng-controller="listardados">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CEP</th>
+          <th>Cidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let list of arrayTable">
+          <td>{{list.id}}</td>
+          <td>{{list.cep}}</td>
+          <td>{{list.city}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
