@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
@@ -14,7 +14,6 @@ export class CadastroComponent implements OnInit {
   cadastroForm: FormGroup
 
   msgReturn = "";
-  login = "";
 
   constructor(
     private fb: FormBuilder,
@@ -30,7 +29,10 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
 
 
+  }
 
+  backDashboard(){
+      this.router.navigate(['/','dashboard']);
   }
 
   postdata(cadastroForm1: any) {

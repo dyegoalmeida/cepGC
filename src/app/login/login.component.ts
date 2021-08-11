@@ -1,4 +1,4 @@
-import { Component, Output, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -13,9 +13,7 @@ import { ApiService } from '../api.service';
 export class LoginComponent implements OnInit {
 
   angForm: FormGroup;
-
-  @Input() userLog: any;
-  @Output() dataEvent = new EventEmitter<string>();
+  msgValidate: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -33,6 +31,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
   postdata(angForm1: any) {
+
+    if (this.angForm.invalid){
+      this.msgValidate = "Campos obrigatórios, preencha corretamente!";
+      return;
+    }
+
     this.dataService
       .userlogin(angForm1.value.email, angForm1.value.password)
       .pipe(first())
@@ -42,8 +46,6 @@ export class LoginComponent implements OnInit {
             ? this.dataService.redirectUrl
             : '/dashboard';
           this.router.navigate([redirect]);
-          //Emitir a informação, no caso o email LOGIN
-          this.dataEvent.emit(angForm1.value.email);
         },
         (error) => {
           alert('Nome de usuário ou senha está incorreto!');

@@ -17,6 +17,7 @@ import { ApiService } from '../api.service';
 })
 export class RegisterComponent implements OnInit {
   angForm: FormGroup;
+  msgValidate: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -24,19 +25,24 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {
     this.angForm = this.fb.group({
+      name: ['', Validators.required],
       email: [
         '',
         [Validators.required, Validators.minLength(1), Validators.email],
       ],
       password: ['', Validators.required],
-      name: ['', Validators.required],
-      mobile: ['', Validators.required],
     });
   }
 
   ngOnInit() {}
 
   postdata(angForm1: any) {
+
+    if (this.angForm.invalid){
+      this.msgValidate = "Campos obrigatórios, preencha corretamente!";
+      return;
+    }
+
     this.dataService
       .userregistration(
         angForm1.value.name,
