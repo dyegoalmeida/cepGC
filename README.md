@@ -1,12 +1,12 @@
 # Sistema para Validação de CEP com Login
 
-Teste para vaga de programador PHP da empresa Trend Technology
+Teste para vaga de programador PHP
 
 # Ferramentas utilizadas:
 - Visual Studio Code
 - PHPMyAdmin 
 - Navegador Chrome Versão 92.0.4515.131 64 bits
-- Git 2.21.1
+- Git
 
 # Stacks:
 - Angular CLI 12.2.0 
