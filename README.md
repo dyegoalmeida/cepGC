@@ -30,10 +30,11 @@ Teste para vaga de programador PHP da empresa Trend Technology
   </br></br>
   <pre><code>ng serve --port 5000 -o</code></pre>
   Isso irá abrir o browser automaticamente na tela de Login;
- - Caso após executar o último comando apresentar o erro abaixo: 
+ - Caso, após executar o último comando apresentar o erro abaixo: 
    </br></br>
    <pre><code>Cannot find module '@angular-devkit/build-angular/package.json'</code></pre>
    Execute esse comando:
+   </br></br>
    <pre><code>npm install --save-dev @angular-devkit/build-angular</code></pre>
 
 npm install --save-dev @angular-devkit/build-angular
