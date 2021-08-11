@@ -9,7 +9,6 @@ function validateCep($cep)
 
   $arrayKeys = [];
   $arrayNum = [];
-  $sub = 0;
 
   $cepStr = (string) $cep;
 
@@ -22,28 +21,35 @@ function validateCep($cep)
     //Filtra o número repetido criando um novo array
     $arrayResult = preg_grep($regex, $array);
 
-    //Retorna o array das posições do array $arrayResult
-    $arrayKeys = array_keys($arrayResult);
+    if (count($arrayResult) > 1){
+      //Retorna um array com as posições do array $arrayResult como conteúdo
+      $arrayKeys = array_keys($arrayResult);
 
-    $lengthArray = count($arrayKeys);
+      $lengthArray = count($arrayKeys);
 
-    $sub = 0;
+      $sub = 0;
 
-    for ($id = ($lengthArray - 1); $id >= 0; $id--) {
+      for ($id = ($lengthArray - 1); $id >= 0; $id--) {
 
-      $sub = $arrayKeys[$id] - $sub;
-    }
+        if ($id != 0){
 
-    if (abs($sub) == 2) {
-      //Procura no array se o valor existe e retorna o índice
-      if (in_array($value, $arrayNum) == false) {
-        //Add o valor após o último no array
-        array_push($arrayNum, $value);
+          $sub = $arrayKeys[$id] - $arrayKeys[$lengthArray - 2];
+
+          if ($sub == 2){
+            array_push($arrayNum, $value);
+            break;
+          }
+
+        }
+
       }
+
     }
+
   }
 
   return $arrayNum;
+
 }
 
 if (isset($postdata) && !empty($postdata)) {
@@ -57,7 +63,7 @@ if (isset($postdata) && !empty($postdata)) {
   if ($msgNum != "") {
 
     $validateCEP = [
-      'msg' => 'Atenção! Números: ' . $msgNum . ' são dígito(s) repetitivo(s) alternado em par, digite um CEP válido!'
+      'msg' => 'Atenção! Os seguintes número(s) são dígito(s) repetitivo(s) alternado em par: ' . $msgNum
     ];
 
     echo json_encode($validateCEP);
