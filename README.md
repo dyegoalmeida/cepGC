@@ -23,7 +23,7 @@ Teste para vaga de programador PHP da empresa Trend Technology
 - Instalar o node 14.7.4 <b><a href="https://nodejs.org/dist/v14.17.4/">Download aqui</a></b>
 - Iniciar os serviços Apache e Mysql, pode ser feito pelo gerenciador do xampp;
 - Executar o script que se encontra na pasta Assets para criação do Banco;
-- Executar o terminal dentro da pasta do projeto e executar o comando:
+- Abrir o terminal, ir até a pasta do projeto e executar o comando:
   </br></br>
   <pre><code>ng serve --port 5000 -o</code></pre>
   Isso irá abrir o browser automaticamente na tela de Login;
