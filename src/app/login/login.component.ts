@@ -32,8 +32,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
   postdata(angForm1: any) {
 
-    console.log(this.angForm);
-
     if (this.angForm.invalid){
       this.msgValidate = "Campos obrigatórios, preencha corretamente!";
       return;
@@ -50,7 +48,9 @@ export class LoginComponent implements OnInit {
           this.router.navigate([redirect]);
         },
         (error) => {
-          this.msgValidate ='Nome de usuário ou senha está incorreto!';
+
+          this.msgValidate ='Nome de usuário ou senha está incorreto!' + Object.keys(error) + Object.values(error);
+
         }
       );
   }

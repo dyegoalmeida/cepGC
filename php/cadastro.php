@@ -57,7 +57,7 @@ if (isset($postdata) && !empty($postdata)) {
   if ($msgNum != "") {
 
     $validateCEP = [
-      'msg' => 'Atenção! Números: ' . $msgNum . ' contém dígito(s) repetitivo(s), digite um CEP válido!'
+      'msg' => 'Atenção! Números: ' . $msgNum . ' são dígito(s) repetitivo(s) alternado em par, digite um CEP válido!'
     ];
 
     echo json_encode($validateCEP);
