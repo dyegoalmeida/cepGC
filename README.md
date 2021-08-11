@@ -20,11 +20,11 @@ Teste para vaga de programador PHP da empresa Trend Technology
 # Passos para reproduzir e executar o projeto:
 - Instalar o xampp <b><a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.0.7/">Download aqui</a></b>
 - Clonar/Extrair o projeto dentro da pasta "xampp/htdocs";
-- Executar o script que se encontra na pasta Assets para criação do Banco;
 - Instalar o node 14.7.4 <b><a href="https://nodejs.org/dist/v14.17.4/">Download aqui</a></b>
 - Iniciar os serviços Apache e Mysql, pode ser feito pelo gerenciador do xampp;
-- Executar o terminal dentro da pasta do projeto e executar:
-  ng serve --port 5000 -o
+- Executar o script que se encontra na pasta Assets para criação do Banco;
+- Executar o terminal dentro da pasta do projeto e executar o comando:
+  <code>ng serve --port 5000 -o</code>
   Isso irá abrir o browser automaticamente na tela de Login;
 
 # O Software contém:
