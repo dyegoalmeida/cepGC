@@ -37,8 +37,6 @@ Teste para vaga de programador PHP da empresa Trend Technology
    </br></br>
    <pre><code>npm install --save-dev @angular-devkit/build-angular</code></pre>
 
-npm install --save-dev @angular-devkit/build-angular
-
 # O Software contém:
 - Tela de Login
 - Tela de Cadastro de Usuário
