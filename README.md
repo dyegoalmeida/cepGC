@@ -24,7 +24,7 @@ Teste para vaga de programador PHP da empresa Trend Technology
 - Iniciar os serviços Apache e Mysql, pode ser feito pelo gerenciador do xampp;
 - Executar o script que se encontra na pasta Assets para criação do Banco;
 - Executar o terminal dentro da pasta do projeto e executar o comando:</br>
-  <code>ng serve --port 5000 -o</code></br>
+  <pre><code>ng serve --port 5000 -o</code></pre></br>
   Isso irá abrir o browser automaticamente na tela de Login;
 
 # O Software contém:
