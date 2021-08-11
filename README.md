@@ -21,6 +21,9 @@ Teste para vaga de programador PHP da empresa Trend Technology
 - Instalar o xampp <b><a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.0.7/" target="_blank">Download aqui</a></b>
 - Clonar/Extrair o projeto dentro da pasta "xampp\htdocs";
 - Instalar o node 14.7.4 <b><a href="https://nodejs.org/dist/v14.17.4/" target="_blank">Download aqui</a></b>
+- Instalar o Angular CLI 12.2.0, abra o terminal e execute o comando abaixo
+  </br></br>
+  <pre><code>npm install -g @angular/cli</code></pre>
 - Iniciar os serviços Apache e Mysql, pode ser feito pelo gerenciador do xampp;
 - Executar o script que se encontra na pasta "src\Assets" para criação do Banco;
 - Abrir o terminal e executar o comando abaixo dentro da pasta do projeto
