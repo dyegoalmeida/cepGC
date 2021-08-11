@@ -28,7 +28,7 @@ Teste para vaga de programador PHP da empresa Trend Technology
 - Executar o script que se encontra na pasta "src\Assets" para criação do Banco;
 - Abrir o terminal e executar o comando abaixo dentro da pasta do projeto
   </br></br>
-  <pre><code>ng serve --port 5000 -o</code></pre>
+  <pre><code>ng serve -o</code></pre>
   Isso irá abrir o browser automaticamente na tela de Login;
  - Caso, após executar o último comando apresentar o erro abaixo: 
    </br></br>
