@@ -1,10 +1,19 @@
-<div class="d-flex justify-content-center">
-  <h1>Validador de CEP - Gotham City</h1>
+
+<div class="d-flex text-center shadow-lg p-3 mb-5 bg-body text-light">
+  <div class="col-4 align-self-center">
+    <img src="./../assets/batkeaton.jpg" width="120px" height="120px" class="rounded-circle" alt="...">
+  </div>
+
+  <div class="col-4">
+    <p class="fs-3" >Cadastro de CEP da cidade de Gotham City</p>
+    <p class="fs-4">Aprovado pelo Batman 🦇</p>
+  </div>
 </div>
 
-<div class="menu">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <button
+<div class="menu text-light">
+
+  <nav class="navbar navbar-expand-lg bg-dark">
+<!--     <button
       class="navbar-toggler"
       type="button"
       data-toggle="collapse"
@@ -14,13 +23,13 @@
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
     <div class="collapse navbar-collapse justify-content-center" id="navbarsExample">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a
-            class="nav-link"
+            class="nav-link text-light"
             *ngIf="loginbtn"
             routerLink="home"
             routerLinkActive="active"
@@ -29,18 +38,18 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link"
+            class="nav-link text-light"
             *ngIf="loginbtn"
             routerLink="login"
             routerLinkActive="active"
             >Login</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item text-light">
           <button
             type="button"
             *ngIf="logoutbtn"
-            class="btn btn-block"
+            class="btn btn-block text-light"
             (click)="logout()"
           >
             Sair
@@ -48,20 +57,11 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link"
+            class="nav-link text-light"
             *ngIf="loginbtn"
             routerLink="registration"
             routerLinkActive="active"
             >Cadastre-se</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            *ngIf="logoutbtn"
-            routerLink="dashboard"
-            routerLinkActive="active"
-            >Dashboard</a
           >
         </li>
       </ul>

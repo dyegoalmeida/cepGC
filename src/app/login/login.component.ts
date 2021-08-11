@@ -22,15 +22,17 @@ export class LoginComponent implements OnInit {
   ) {
     this.angForm = this.fb.group({
       email: [
-        '',
-        [Validators.required, Validators.minLength(1), Validators.email],
+        null,
+        [Validators.required, Validators.email],
       ],
-      password: ['', Validators.required],
+      password: [null, Validators.required],
     });
   }
 
   ngOnInit() {}
   postdata(angForm1: any) {
+
+    console.log(this.angForm);
 
     if (this.angForm.invalid){
       this.msgValidate = "Campos obrigatórios, preencha corretamente!";
@@ -48,7 +50,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([redirect]);
         },
         (error) => {
-          alert('Nome de usuário ou senha está incorreto!');
+          this.msgValidate ='Nome de usuário ou senha está incorreto!';
         }
       );
   }

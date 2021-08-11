@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
-  FormControl,
   FormBuilder,
   Validators,
-  NgForm,
 } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -54,8 +52,9 @@ export class RegisterComponent implements OnInit {
         (data) => {
           this.router.navigate(['login']);
         },
-
-        (error) => {}
+        (error) => {
+          this.msgValidate = "Ocorreu um erro: " + error;
+        }
       );
   }
 
